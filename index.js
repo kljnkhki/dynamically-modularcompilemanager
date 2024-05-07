@@ -1,7 +1,11 @@
-function canJump(nums) {
-  let lastPos = nums.length - 1;
-  for (let i = nums.length - 2; i >= 0; i--) {
-    if (i + nums[i] >= lastPos) lastPos = i;
+function isValidBST(root) {
+  return isValid(root, null, null);
+  function isValid(node, min, max) {
+    if (!node) return true;
+    if ((min !== null && node.val <= min) || (max !== null && node.val >= max))
+      return false;
+    return (
+      isValid(node.left, min, node.val) && isValid(node.right, node.val, max)
+    );
   }
-  return lastPos === 0;
 }
