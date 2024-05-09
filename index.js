@@ -1,3 +1,5 @@
-function isPalindrome(str) {
-  return str === str.split("").reverse().join("");
+function sayHi() {
+  console.log("Hi!");
 }
+
+setTimeout(sayHi, 2000); // Run sayHi after 2 seconds
