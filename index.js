@@ -1,5 +1,6 @@
-function sayHi() {
-  console.log("Hi!");
+function flattenArray(arr) {
+  return arr.reduce(
+    (acc, curr) => acc.concat(Array.isArray(curr) ? flattenArray(curr) : curr),
+    [],
+  );
 }
-
-setTimeout(sayHi, 2000); // Run sayHi after 2 seconds
