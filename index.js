@@ -1,6 +1,2 @@
-function flattenArray(arr) {
-  return arr.reduce(
-    (acc, curr) => acc.concat(Array.isArray(curr) ? flattenArray(curr) : curr),
-    [],
-  );
-}
+const countOccurrences = (arr, value) =>
+  arr.reduce((a, v) => (v === value ? a + 1 : a), 0);
