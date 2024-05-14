@@ -1,4 +1,5 @@
-const fruits = ["apple", "banana", "orange"];
-for (const fruit of fruits) {
-  console.log(fruit);
+function kthSmallest(matrix, k) {
+  const flatten = matrix.reduce((acc, row) => acc.concat(row), []);
+  flatten.sort((a, b) => a - b);
+  return flatten[k - 1];
 }
